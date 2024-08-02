@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Description:</strong> {{ book.description }}</p>
+    <p><strong>Year:</strong> {{ book.getPublicationYear }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    {% if book.coverImage %}
+        <img src="{{ asset('uploads/' ~ book.coverImage) }}" alt="Cover Image" />
+    {% endif %}
+    <a href="{{ path('book_edit', { id: book.id }) }}">Edit</a>
+    <a href="{{ path('book_delete', { id: book.id }) }}" onclick="return confirm('Are you sure?');">Delete</a>
+    <a href="{{ path('book_list') }}">Back to list</a>
+</body>
+</html>

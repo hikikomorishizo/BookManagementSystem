@@ -1,0 +1,27 @@
+{# templates/book/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Book List</h1>
+
+    <form method="get" action="{{ path('book_list') }}">
+        <input type="text" name="search" value="{{ search_query }}" placeholder="Search by title or author" />
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{ path('book_show', { id: book.id }) }}">
+                    {{ book.title }} by {{ book.author }}
+                </a>
+                <a href="{{ path('book_edit', { id: book.id }) }}">Edit</a>
+                <a href="{{ path('book_delete', { id: book.id }) }}" onclick="return confirm('Are you sure?');">Delete</a>
+            </li>
+        {% else %}
+            <li>No books found</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('book_create') }}">Add a new book</a>
+{% endblock %}

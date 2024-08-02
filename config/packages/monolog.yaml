@@ -1,0 +1,19 @@
+# config/packages/monolog.yaml
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        error_log:
+            type: stream
+            path: "%kernel.logs_dir%/error.log"
+            level: error
+        console:
+            type: console
+            process_psr_3_messages: false
+        file_log:
+            type: stream
+            path: "%kernel.logs_dir%/newbook.log"
+            level: info
+            channels: ['newbook']

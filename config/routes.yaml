@@ -1,0 +1,33 @@
+homepage:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+book_list:
+    path: /books
+    controller: App\Controller\BookController::index
+
+book_create:
+    path: /books/new
+    controller: App\Controller\BookController::new
+
+book_edit:
+    path: /books/{id}/edit
+    controller: App\Controller\BookController::edit
+    requirements:
+        id: \d+
+
+book_delete:
+    path: /books/{id}/delete
+    controller: App\Controller\BookController::delete
+    requirements:
+        id: \d+
+
+book_show:
+    path: /books/{id}
+    controller: App\Controller\BookController::show
+    requirements:
+        id: \d+
+
+log_test:
+    path: /log-test
+    controller: App\Controller\TestLogController::logTest

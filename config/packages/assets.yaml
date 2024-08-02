@@ -1,0 +1,8 @@
+framework:
+    assets:
+        # Configure asset versioning
+        version: '1.0'
+        version_format: '%%s?ver=%%s'
+        # Optionally configure the asset base URL
+        base_path: ''
+        base_urls: []

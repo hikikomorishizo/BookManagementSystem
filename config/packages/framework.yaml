@@ -1,0 +1,26 @@
+# config/packages/framework.yaml
+framework:
+    secret: '%env(APP_SECRET)%'
+    # Enable or disable the HTTP cache
+    http_method_override: true
+    # Configure the session
+    session:
+        handler_id: ~
+        cookie_secure: auto
+    # Configure asset management
+    assets:
+        # Optionally configure asset versioning
+        version: '1.0'
+        version_format: '%%s?ver=%%s'
+        # Optionally configure the asset base URL
+        base_path: ''
+        base_urls:
+            # Add at least one base URL, even if it's empty
+            - ''
+
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file

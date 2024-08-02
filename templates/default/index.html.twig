@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Management System</title>
+</head>
+<body>
+    <h1>Welcome to the Book Management System</h1>
+    
+    <ul>
+        <li><a href="{{ path('book_list') }}">View Book List</a></li>
+        <li><a href="{{ path('book_create') }}">Add New Book</a></li>
+    </ul>
+
+    <h2>For testing:</h2>
+    <ul>
+        <li><a href="{{ path('book_edit', { id: 1 }) }}">Edit Book with ID 1</a></li>
+        <li><a href="{{ path('book_delete', { id: 1 }) }}">Delete Book with ID 1</a></li>
+    </ul>
+</body>
+</html>
